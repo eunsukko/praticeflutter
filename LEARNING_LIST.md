@@ -5,3 +5,4 @@ flutter 에서 레이아웃 관련 정리
 
 https://flutter.io/docs/development/ui/widgets-intro
 // Widgets describe what their view should look like given their current configuration and state
+// Passing widgets as arguments to other widgets is a powerful technique that lets you create generic widgets that can be reused in a wide variety of ways.
