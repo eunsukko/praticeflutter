@@ -7,6 +7,12 @@ import 'package:flutter/rendering.dart';
 
 // import '../../gallery/demo.dart';
 
+// var jsonData = '{"Team":{"Name":"2019년도 1셀","MemberIds":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],"MemberValidPeriods":[{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"}],"Positions":[[0],[1]]},"People":[{"Name":"이사라","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"김민수","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"김윤호","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"정윤선","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"천도현","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"조병민","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"고은석","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"이재성","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"박효철","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"김정민","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"정가람","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"김건형","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"최휘성","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"김혜인","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"백혜수","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"심규영","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"노태형","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"김진우","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"노이삭","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"구현모","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"김진우","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}}]}';
+var jsonData = '{"Team":{"Name":"2019년도 1셀","MemberIds":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],"MemberValidPeriods":[{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"},{"From":"2018-11-04T00:00:00Z","To":"2019-11-03T00:00:00Z"}],"Positions":[[0],[1]]},"Eventlist":["금철","대예배","5부예배","셀모임"],"People":[{"Name":"이사라","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"김민수","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"김윤호","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"정윤선","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"천도현","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"조병민","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"고은석","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"이재성","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"박효철","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"김정민","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"정가람","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"김건형","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"최휘성","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"김혜인","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"백혜수","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"심규영","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"노태형","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"김진우","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"노이삭","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"구현모","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}},{"Name":"김진우","Attendance":{"5부예배":false,"금철":false,"대예배":false,"셀모임":false}}]}';
+
+// init attendancebook 
+// 
+
 class Dessert {
   Dessert(this.name, this.calories, this.fat, this.carbs, this.protein, this.sodium, this.calcium, this.iron);
   final String name;
@@ -19,6 +25,11 @@ class Dessert {
   final int iron;
 
   bool selected = false;
+
+  Map<String, bool> values = {
+    'val1': false,
+    'val2': false,
+  };
 }
 
 class DessertDataSource extends DataTableSource {
@@ -100,28 +111,44 @@ class DessertDataSource extends DataTableSource {
     assert(index >= 0);
     if (index >= _desserts.length)
       return null;
-    final Dessert dessert = _desserts[index];
+    Dessert dessert = _desserts[index];
+
+    var _curCells = <DataCell>[
+        DataCell(Text('${dessert.name}')),
+    ];
+    _curCells.addAll(dessert.values.keys.map((String key) {
+      return DataCell(Checkbox(
+        value: dessert.values[key],
+        onChanged: (bool value) {
+          dessert.values[key] = value;
+          notifyListeners();
+        },
+       ));
+    }));
+
     return DataRow.byIndex(
       index: index,
-      selected: dessert.selected,
-      onSelectChanged: (bool value) {
-        if (dessert.selected != value) {
-          _selectedCount += value ? 1 : -1;
-          assert(_selectedCount >= 0);
-          dessert.selected = value;
-          notifyListeners();
-        }
-      },
-      cells: <DataCell>[
-        DataCell(Text('${dessert.name}')),
-        DataCell(Text('${dessert.calories}')),
-        DataCell(Text('${dessert.fat.toStringAsFixed(1)}')),
-        DataCell(Text('${dessert.carbs}')),
-        DataCell(Text('${dessert.protein.toStringAsFixed(1)}')),
-        DataCell(Text('${dessert.sodium}')),
-        DataCell(Text('${dessert.calcium}%')),
-        DataCell(Text('${dessert.iron}%')),
-      ]
+      // selected: dessert.selected,
+      // onSelectChanged: (bool value) {
+      //   if (dessert.selected != value) {
+      //     _selectedCount += value ? 1 : -1;
+      //     assert(_selectedCount >= 0);
+      //     dessert.selected = value;
+      //     notifyListeners();
+      //   }
+      // },
+      cells: _curCells,
+      // cells: <DataCell>[
+      //   DataCell(Text('${dessert.name}')),
+      //   DataCell(Checkbox()),
+      //   // DataCell(Text('${dessert.calories}')),
+      //   // DataCell(Text('${dessert.fat.toStringAsFixed(1)}')),
+      //   // DataCell(Text('${dessert.carbs}')),
+      //   // DataCell(Text('${dessert.protein.toStringAsFixed(1)}')),
+      //   // DataCell(Text('${dessert.sodium}')),
+      //   // DataCell(Text('${dessert.calcium}%')),
+      //   // DataCell(Text('${dessert.iron}%')),
+      // ]
     );
   }
 
@@ -173,10 +200,10 @@ class _DataTableDemoState extends State<DataTableDemo> {
         // ],
       ),
       body: ListView(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(8.0),
         children: <Widget>[
           PaginatedDataTable(
-            header: const Text('Nutrition'),
+            header: const Text('Nutrition'), // 헤더에 해당 셀의 정보를 추가 (동적으로 얻어온 team정보를 기준으로 만들기)
             rowsPerPage: _rowsPerPage,
             onRowsPerPageChanged: (int value) { setState(() { _rowsPerPage = value; }); },
             sortColumnIndex: _sortColumnIndex,
@@ -198,32 +225,32 @@ class _DataTableDemoState extends State<DataTableDemo> {
                 numeric: true,
                 onSort: (int columnIndex, bool ascending) => _sort<num>((Dessert d) => d.fat, columnIndex, ascending)
               ),
-              DataColumn(
-                label: const Text('Carbs (g)'),
-                numeric: true,
-                onSort: (int columnIndex, bool ascending) => _sort<num>((Dessert d) => d.carbs, columnIndex, ascending)
-              ),
-              DataColumn(
-                label: const Text('Protein (g)'),
-                numeric: true,
-                onSort: (int columnIndex, bool ascending) => _sort<num>((Dessert d) => d.protein, columnIndex, ascending)
-              ),
-              DataColumn(
-                label: const Text('Sodium (mg)'),
-                numeric: true,
-                onSort: (int columnIndex, bool ascending) => _sort<num>((Dessert d) => d.sodium, columnIndex, ascending)
-              ),
-              DataColumn(
-                label: const Text('Calcium (%)'),
-                tooltip: 'The amount of calcium as a percentage of the recommended daily amount.',
-                numeric: true,
-                onSort: (int columnIndex, bool ascending) => _sort<num>((Dessert d) => d.calcium, columnIndex, ascending)
-              ),
-              DataColumn(
-                label: const Text('Iron (%)'),
-                numeric: true,
-                onSort: (int columnIndex, bool ascending) => _sort<num>((Dessert d) => d.iron, columnIndex, ascending)
-              ),
+              // DataColumn(
+              //   label: const Text('Carbs (g)'),
+              //   numeric: true,
+              //   onSort: (int columnIndex, bool ascending) => _sort<num>((Dessert d) => d.carbs, columnIndex, ascending)
+              // ),
+              // DataColumn(
+              //   label: const Text('Protein (g)'),
+              //   numeric: true,
+              //   onSort: (int columnIndex, bool ascending) => _sort<num>((Dessert d) => d.protein, columnIndex, ascending)
+              // ),
+              // DataColumn(
+              //   label: const Text('Sodium (mg)'),
+              //   numeric: true,
+              //   onSort: (int columnIndex, bool ascending) => _sort<num>((Dessert d) => d.sodium, columnIndex, ascending)
+              // ),
+              // DataColumn(
+              //   label: const Text('Calcium (%)'),
+              //   tooltip: 'The amount of calcium as a percentage of the recommended daily amount.',
+              //   numeric: true,
+              //   onSort: (int columnIndex, bool ascending) => _sort<num>((Dessert d) => d.calcium, columnIndex, ascending)
+              // ),
+              // DataColumn(
+              //   label: const Text('Iron (%)'),
+              //   numeric: true,
+              //   onSort: (int columnIndex, bool ascending) => _sort<num>((Dessert d) => d.iron, columnIndex, ascending)
+              // ),
             ],
             source: _dessertsDataSource
           )
