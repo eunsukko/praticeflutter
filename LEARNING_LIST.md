@@ -6,3 +6,15 @@ flutter 에서 레이아웃 관련 정리
 https://flutter.io/docs/development/ui/widgets-intro
 // Widgets describe what their view should look like given their current configuration and state
 // Passing widgets as arguments to other widgets is a powerful technique that lets you create generic widgets that can be reused in a wide variety of ways.
+
+20190206(수)
+
+어떤 애들을 사용해서 출석화면을 구성할지 찾아보고 실제로 적용해보기
+
+// 어떤 애들을 사용할지.. 결정 material 
+https://flutter.io/docs/development/ui/widgets/material
+
+// data table (listview 대신에 적용해도 괜춘을 듯)
+https://material.io/design/components/data-tables.html#
+
+가장 중요한? 부분이 ... 출석부의 각... <event, boolean> 정보를 어떻게 잘 표현할지??
