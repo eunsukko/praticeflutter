@@ -17,4 +17,36 @@ https://flutter.io/docs/development/ui/widgets/material
 // data table (listview 대신에 적용해도 괜춘을 듯)
 https://material.io/design/components/data-tables.html#
 
+https://material.io/design/components/selection-controls.html#checkboxes
+
+
 가장 중요한? 부분이 ... 출석부의 각... <event, boolean> 정보를 어떻게 잘 표현할지??
+
+// 
+https://flutter.io/docs/cookbook/networking/background-parsing
+
+//
+https://flutter.io/docs/cookbook/design/fonts
+https://flutter.io/docs/cookbook/design/themes
+
+
+https://flutter.io/docs/cookbook/networking/background-parsing
+https://jsonplaceholder.typicode.com/photos
+
+
+// samples
+https://github.com/flutter/samples/blob/master/INDEX.md
+
+
+
+// 
+https://material.io/design/
+
+
+// 
+https://flutter.io/docs/resources/bootstrap-into-dart
+
+// UI관련 개념
+https://flutter.io/docs/development/ui/layout
+https://flutter.io/docs/development/ui/widgets-intro
+https://flutter.io/docs/development/ui/layout/tutorial
