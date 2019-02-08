@@ -475,9 +475,25 @@ class _AttendancebookDataTable extends State<AttendancebookDataTable> {
     return ListView(
         padding: const EdgeInsets.all(8.0),
         children: <Widget>[
-          SizedBox(height: 32.0), // 전송 버튼 부분 
+          FloatingActionButton( // paginatedDataTable 내부에 있으면 기본적으로 흐릿하게 보임 ㅠㅠ
+                  onPressed: _sendAttendancebook,
+                  tooltip: '전송',
+                  child: Icon(
+                    Icons.send,
+                    color: Colors.white,
+                  ),
+                  foregroundColor: Colors.white,
+                  mini: true,
+                ),// 전송 버튼 부분 
           SizedPaginatedDataTable(
-            header: Text('$teamName 출석부'), // 헤더에 해당 셀의 정보를 추가 (동적으로 얻어온 team정보를 기준으로 만들기)
+            header: Row(
+              children: <Widget>[
+                Expanded( 
+                  child: Text('$teamName 출석부'),
+                ),
+              ],
+            ),
+             // 헤더에 해당 셀의 정보를 추가 (동적으로 얻어온 team정보를 기준으로 만들기)
             rowsPerPage: _rowsPerPage,
             onRowsPerPageChanged: (int value) { setState(() { _rowsPerPage = value; }); },
             sortColumnIndex: _sortColumnIndex,
@@ -489,6 +505,10 @@ class _AttendancebookDataTable extends State<AttendancebookDataTable> {
           ),
         ]
       );
+  }
+
+  void _sendAttendancebook() {
+    print("send attendancebook");
   }
 }
 
