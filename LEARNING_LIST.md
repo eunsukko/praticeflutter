@@ -50,3 +50,25 @@ https://flutter.io/docs/resources/bootstrap-into-dart
 https://flutter.io/docs/development/ui/layout
 https://flutter.io/docs/development/ui/widgets-intro
 https://flutter.io/docs/development/ui/layout/tutorial
+
+
+// http
+https://pub.dartlang.org/documentation/http/latest/http/http-library.html
+https://pub.dartlang.org/packages/http
+
+20190207 (목)
+
+attendancebook 화면 구성
+    - 화면 비율... (에고.. data-table 에서 크기를 밖에서 조정할 길이 없는듯.. 그러면 코드를 직접 고쳐야하나...)
+        아마... data_table.dart 에서 크기 관련 항목들을 수정해야 할듯.. ㅠㅠ 
+        어떻게하면 event들이 추가되어도 확인 가능하게 할 수 있으려나??
+
+        * 나만의 flutter 소스가 아니라... 다른 곳에서도 적용되었으면 하는데 ...
+        (flutter의 코드를 고치면 빌드하면 상관 없는건지.. 다른곳에서는 문제가 되는건지...)
+
+    - 총계 + 전송 부분 추가 (화면에서 어떻게 구상할지도.. 고려해야할 듯)
+    
+
+
+// 
+https://flutter.io/docs/development/ui/layout

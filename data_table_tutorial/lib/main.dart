@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/foundation.dart';
 
+import 'sized_paginated_data_table.dart';
+
 import 'dart:async';
 import 'dart:convert';
 
@@ -107,30 +109,32 @@ class Attendancebook {
   };
 }
 
-class Dessert {
-  Dessert(this.name, this.calories, this.fat, this.carbs, this.protein, this.sodium, this.calcium, this.iron);
-  final String name;
-  final int calories;
-  final double fat;
-  final int carbs;
-  final double protein;
-  final int sodium;
-  final int calcium;
-  final int iron;
+// class Dessert {
+//   Dessert(this.name, this.calories, this.fat, this.carbs, this.protein, this.sodium, this.calcium, this.iron);
+//   final String name;
+//   final int calories;
+//   final double fat;
+//   final int carbs;
+//   final double protein;
+//   final int sodium;
+//   final int calcium;
+//   final int iron;
 
-  bool selected = false;
+//   bool selected = false;
 
-  Map<String, bool> values = {
-    'val1': false,
-    'val2': false,
-  };
-}
+//   Map<String, bool> values = {
+//     'val1': false,
+//     'val2': false,
+//   };
+// }
 
 class PeopleDataSource extends DataTableSource {
   List<Person> _people;
   List<String> _events;
 
-  PeopleDataSource(this._people, this._events);
+  Function _setStateParent;
+
+  PeopleDataSource(this._people, this._events, this._setStateParent);
 
   void _sort<T>(Comparable<T> getField(Person p), bool ascending) {
     _people.sort((Person a, Person b) {
@@ -164,6 +168,7 @@ class PeopleDataSource extends DataTableSource {
         onChanged: (bool value) {
           person.attendance[key] = value;
           notifyListeners();
+          _setStateParent();
         },
        ));
     }));
@@ -188,6 +193,16 @@ class PeopleDataSource extends DataTableSource {
       person.selected = checked;
     _selectedCount = checked ? _people.length : 0;
     notifyListeners();
+  }
+
+  Map<String, int> calcAttendanceCounts() {
+    var counter = Map<String, int>();
+    // init 
+    _events.forEach((k) => counter[k] = 0);
+
+    _people.forEach((p) => p.attendance.forEach((k, v) => counter[k] += (v)? 1 : 0));
+
+    return counter;
   }
 }
 
@@ -396,11 +411,16 @@ class _AttendancebookDataTable extends State<AttendancebookDataTable> {
 
   Attendancebook attendancebook;
   PeopleDataSource _peopleDataSource;
+  Map<String, int> _attendanceCounter;
+
+  void updatePeopleDataSource() {
+    setState(() => this._attendanceCounter);
+  }
   // data source 를 업데이트하기
   // 연결 지어주기
 
   _AttendancebookDataTable(this.attendancebook) {
-    _peopleDataSource = PeopleDataSource(this.attendancebook.people, this.attendancebook.eventlist);
+    _peopleDataSource = PeopleDataSource(this.attendancebook.people, this.attendancebook.eventlist, this.updatePeopleDataSource);
   }
 
   void _sort<T>(Comparable<T> getField(Person p), int columnIndex, bool ascending) {
@@ -413,8 +433,12 @@ class _AttendancebookDataTable extends State<AttendancebookDataTable> {
 
   @override
   Widget build(BuildContext context) {
+    print("attendancebookDataTable build called");
+
     final team = attendancebook.team;
     final teamName = team.name;
+
+    _attendanceCounter = _peopleDataSource.calcAttendanceCounts();
 
     var curColumns = <DataColumn>[
       DataColumn(
@@ -422,16 +446,20 @@ class _AttendancebookDataTable extends State<AttendancebookDataTable> {
         onSort: (int columnIndex, bool ascending) => _sort<String>((Person p) => p.name, columnIndex, ascending)),
     ];
     curColumns.addAll(
-      attendancebook.eventlist.map<DataColumn>((String event) => 
-      DataColumn(
-        label: Text('$event'),
-      ))
+      attendancebook.eventlist.map<DataColumn>((String event){
+        final eventCnt = _attendanceCounter[event].toString();
+        return DataColumn(
+          label: Text('$event' + '($eventCnt)'),
+        );
+      }
+      )
     );
 
     return ListView(
         padding: const EdgeInsets.all(8.0),
         children: <Widget>[
-          PaginatedDataTable(
+          SizedBox(height: 32.0), // 전송 버튼 부분 
+          SizedPaginatedDataTable(
             header: Text('$teamName 출석부'), // 헤더에 해당 셀의 정보를 추가 (동적으로 얻어온 team정보를 기준으로 만들기)
             rowsPerPage: _rowsPerPage,
             onRowsPerPageChanged: (int value) { setState(() { _rowsPerPage = value; }); },
@@ -440,7 +468,8 @@ class _AttendancebookDataTable extends State<AttendancebookDataTable> {
             onSelectAll: _peopleDataSource._selectAll,
             columns: curColumns,
             source: _peopleDataSource,
-          )
+            columnSpacing: 16.0,
+          ),
         ]
       );
   }
