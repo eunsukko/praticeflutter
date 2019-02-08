@@ -449,7 +449,24 @@ class _AttendancebookDataTable extends State<AttendancebookDataTable> {
       attendancebook.eventlist.map<DataColumn>((String event){
         final eventCnt = _attendanceCounter[event].toString();
         return DataColumn(
-          label: Text('$event' + '($eventCnt)'),
+          // label: Text('$event' + '($eventCnt)'),
+          label: Row (
+            children: <Widget>[
+              Text('$event'),
+              SizedBox(width: 2.0),
+              CircleAvatar(
+                backgroundColor: Colors.red,
+                radius: 8.0,
+                child: Text(
+                  '$eventCnt',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 10.0,
+                  ),
+                ),
+              )
+            ],
+          )
         );
       }
       )
